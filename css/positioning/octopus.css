@@ -1,5 +1,20 @@
-div {
-position: absolute;	
-margin: 50px
+#octopus {
 
+position: absolute;	
+display: block;
+margin: 100px 500px 75px;
+}
+
+#hat {
+Position: absolute;
+display: block;
+margin: 40px 480px 75px;
+z-index: 1;
+}
+
+#glasses {
+Position: absolute;
+display: block;
+margin: 200px 540px 75px;
+z-index: 1;
 }
