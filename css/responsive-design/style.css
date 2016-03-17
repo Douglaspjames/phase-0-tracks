@@ -1,3 +1,18 @@
+body {
+  max-width: 960px;
+}
+
+#external-links{
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main {
+  width: 756px;
+  display: inline-block;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -30,3 +45,24 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-siz: .7em;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  #external-links {
+    width: 100%;
+    vertical-align: top;
+    display: block;
+  }
+}
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
+
