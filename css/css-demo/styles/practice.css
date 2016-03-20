@@ -15,9 +15,16 @@ margin: 10px;
 }
 
 #contact-info p {
-	color: rgb(255,0,0);
+	color: black;
 }
+
+
 
 p :last-of-type {
   color: red;
+}
 
+
+.h3 { 
+    color: lime;
+}
