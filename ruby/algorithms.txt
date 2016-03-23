@@ -1,0 +1,30 @@
+Elevator Algorithm
+
+-Move forward into elevator until center of elevator is reached
+-turn around until facing wall with numbered buttons on it
+-start with uppermost button on the left
+-until the number of desired floor is seen   
+   -look at the number on the button to the right of current button
+   -when there are no more numbered buttons on the right look at the button below current button
+   -look at the number on the button to the left of current button
+   -when there are no more numbered buttons on the left look at the button below current button
+-when number of desired floor is seen reach out robot finger and push button
+-button will light up
+-when button is no longer lighted up and doors open proceed forward until you have exited the elevator
+
+
+Cereal Algorithm
+
+- For each cabinet in kitchen:
+    - Until you find a box of Envirokids Cinnamon Munch or until you search last cabinet:
+        - begin with upper cabinet farthest to the left
+        - search cabinet for Envirokids Cinnamon Munch
+    - If no Envirokids Cinnamon Munch is found:
+        - move to next cabinet on the right
+    - When last cabinet to the right has been searched:
+        - move to lower cabinets
+        - search cabinet for Envirokids Cinnamon Munch
+    - If no Envirokids Cinnamon Munch is found:
+        - move to next cabinet on the left
+- if search of last cabinet is finished and no Envirokids Cinnamon Munch is found:
+- yell at mom
