@@ -1,4 +1,4 @@
-=begin
+
 - Encrypt
 write a method
 call it encrypt
@@ -19,49 +19,57 @@ ask for password
 run encrypt or decrpyt method
 print results to screen
 exit
+- Release 4
+decrypt take the value of encrypt as the arguement. 
 =end
 
 
 def encrypt(x)
     index=0
     alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    convert = ''
     while index < x.length
         letter = x[index]
         if letter == "z"
-            print "a"
+            convert << "a"
             index+=1
         elsif letter == " "
-            print " "
+            convert << " "
             index+=1
         else
             letter = alphabet[letter].next!
             index+=1
-            print letter
+            convert << letter
         end
     end
+    convert
 end
 
 def decrypt(x)
     number = 0
+    deconvert = ""
     alphabet = "abcdefghijklmnopqrstuvwxyzBCDEFGHIJKLMNOPQRSTUVWXYZ"
     while number < x.length
         green = x[number]
         if green == " "
-            print " "
+            deconvert << " "
             number +=1
         elsif green == "z"
-            print "a"
+            deconvert << "a"
             number +=1
         else
         red = alphabet.index(green)
         red = red.to_i
         blue = red-1
         yellow = alphabet[blue]
-        print yellow
+        deconvert << yellow
         number += 1
         end
     end
+    deconvert 
 end
+
+decrypt(encrypt("I think we got it"))
 
 puts "What's your password?"
 password = gets.chomp
@@ -76,4 +84,3 @@ else
 end
 print "Thanks. Goodbye."
 
-#We could not get the nested method to work :(
