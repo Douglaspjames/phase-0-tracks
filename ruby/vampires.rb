@@ -1,6 +1,7 @@
 puts "How many employees will be processed today?"
 number_of_employees = gets.chomp.to_i
 surveys = 1
+sunshine_allergy = true
 while surveys <= number_of_employees
   puts "What is your name?"
   name = gets.chomp
@@ -19,12 +20,14 @@ while surveys <= number_of_employees
    break
    end
    if allergies == "sunshine"
-   puts "Probably a vampire"
+   sunshine_allergy = false
    break
    end
   end
 
-    if age == (2016 - year) && (garlic_bread == "Y" && health_insurance == "Y") && (name == "Drake Cula" || name == "Tu Fang")
+    if sunshine_allergy == false
+      puts "Probably a vampire"
+    elsif age == (2016 - year) && (garlic_bread == "Y" && health_insurance == "Y") && (name == "Drake Cula" || name == "Tu Fang")
         puts "Definitely a vampire"
     elsif age != (2016 - year) && (garlic_bread == "N" && health_insurance == "N")
     	puts "Almost certainly a vampire!"
