@@ -19,9 +19,20 @@ theme = gets.chomp
 puts "Do they want an open concept?(Y/N)"
 concept = gets.chomp
 
-client = {name: "name", age: "age", number_of_children: "kids", decor_theme: "theme", open_concept: "concept"}
+client = {name: name, age: age, number_of_children: kids, decor_theme: theme, open_concept: concept}
 puts
 puts
-puts "Client name is #{name}"
+puts "Client name is #{client[:name]}"
+puts "Client age is #{client[:age]}"
+puts "Client number of children is #{client[:number_of_children]}"
+puts "Client decor theme is #{client[:decor_theme]}"
+puts "Open concept: #{client[:open_concept]}"
+
+puts "What information would you like to update?"
+update = gets.chomp
+
+   if update == "none"
+   	puts "Thank you"
+
 
 
