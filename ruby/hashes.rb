@@ -31,8 +31,38 @@ puts "Open concept: #{client[:open_concept]}"
 puts "What information would you like to update?"
 update = gets.chomp
 
-   if update == "none"
-   	puts "Thank you"
+  if update == "name"
+   puts "Client name?"
+   name = gets.chomp
+   client[:name] = name
+  elsif update == "age"
+   puts "Client age?"
+   age = gets.chomp
+   client[:age] = age
+  elsif update == "number of children"
+   puts "Number of children?"
+   kids = gets.chomp
+   client[:number_of_children] = kids
+  elsif update == "decor theme"
+   puts "Client decore theme?"
+   theme = gets.chomp
+   client[:decor_theme] = theme
+  elsif update == "concept"
+   puts "Open concept?(Y/N)"
+   concept = gets.chomp
+   client[:open_concept] = concept
+  elsif update = "none"
+  	puts "Thank you!"
+  else 
+  	puts "Thank you!"
+  end
+
+ puts "Client name is #{client[:name]}"
+ puts "Client age is #{client[:age]}"
+ puts "Client number of children is #{client[:number_of_children]}"
+ puts "Client decor theme is #{client[:decor_theme]}"
+ puts "Open concept: #{client[:open_concept]}"
+ 
 
 
 
