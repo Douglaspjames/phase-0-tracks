@@ -22,6 +22,6 @@ concept = gets.chomp
 client = {name: "name", age: "age", number_of_children: "kids", decor_theme: "theme", open_concept: "concept"}
 puts
 puts
-print client
+puts "Client name is #{name}"
 
 
