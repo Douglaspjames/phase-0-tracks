@@ -3,7 +3,8 @@ baseball = {
         alt_name: 'Belly Itchers',
         bats: {
             national_leauge: "yes",
-            american_league: "no"
+            american_league: "no",
+            new: {newer: "new data"}
         },
         pitches: [
             "Fastball", 
@@ -28,4 +29,5 @@ p baseball[:hitters][:alt_name].downcase
 p baseball[:hitters][:chew][1]
 p baseball[:pitchers][:alt_name].upcase
 p baseball[:pitchers][:pitches][2]
+p baseball[:pitchers][:bats][:new][:newer]
 
