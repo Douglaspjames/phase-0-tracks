@@ -1,4 +1,4 @@
-puts "How many employees will be processed today?"
+  puts "How many employees will be processed today?"
 number_of_employees = gets.chomp.to_i
 surveys = 1
 sunshine_allergy = true
