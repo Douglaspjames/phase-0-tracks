@@ -35,11 +35,32 @@ p cars
 
 
 
-hobbies.delete_if{|hobby| hobby.to_i > 5 == false}
+hobbies.delete_if{|hobby| (hobby.to_i > 5) == false}
 
-cars.delete_if{|car_specs_key, car_specs_value|  car_specs_value.to_i > 5 == false}
+p hobbies
+
+cars.delete_if{|car_specs_key, car_specs_value|  (car_specs_value.to_i > 5) == false}
 
 p cars
+
+
+
+hobbies.keep_if{|hobby| hobby.to_i > 5}
+
+p hobbies
+
+cars.keep_if{|car_specs_key, car_specs_value|  car_specs_value.to_i > 5}
+
+
+
+A method that will remove items from a data structure until the condition in the block evaluates to false, then stops.
+
+
+eql?
+hobbies.keep_if{|hobby| hobby.to_i > 5}
+
+
+
 
 
 #def condition(hash)
