@@ -24,3 +24,17 @@ hobbies.map! do |hobby|
 end
 p hobbies
 
+
+
+hobbies.delete_if{|hobby| hobby.to_i > 5}
+
+p hobbies
+
+#cars.delete_if{|car| car.to_i > 5}
+
+def condition(hash)
+  if cars[:seat] > 5
+    cars.select
+  end
+end
+p cars
