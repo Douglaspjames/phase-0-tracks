@@ -51,6 +51,8 @@ p hobbies
 
 cars.keep_if{|car_specs_key, car_specs_value|  car_specs_value.to_i > 5}
 
+p cars
+
 
 
 A method that will remove items from a data structure until the condition in the block evaluates to false, then stops.
