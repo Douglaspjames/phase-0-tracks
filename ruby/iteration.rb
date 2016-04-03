@@ -7,8 +7,8 @@ test_method { |name1, name2| puts "#{name1} and #{name2}" }
 
 
 
-hobbies= ['tennis', 'movies', 'coding', 'cars']
-cars ={color:"blue", brand:"subaru", seat:5}
+hobbies= ['tennis', 'movies', 'coding', 'cars', '6']
+cars ={color:"blue", brand:"subaru", seat:6}
 
 hobbies.each do |x|
   puts "I like #{x}"
@@ -58,8 +58,9 @@ p cars
 A method that will remove items from a data structure until the condition in the block evaluates to false, then stops.
 
 
-eql?
-hobbies.keep_if{|hobby| hobby.to_i > 5}
+until hobbies = hobbies[1]
+hobbies.delete{|hobby| hobby}
+end
 
 
 
