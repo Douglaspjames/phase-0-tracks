@@ -55,12 +55,16 @@ p cars
 
 
 
-A method that will remove items from a data structure until the condition in the block evaluates to false, then stops.
+#A method that will remove items from a data structure until the condition in the block evaluates to false, then stops.
 
 
-until hobbies = hobbies[1]
-hobbies.delete{|hobby| hobby}
-end
+hobbies.keep_if{|hobby| (hobby.to_i > 5) == false}
+
+p hobbies
+
+cars.keep_if{|car_specs_key, car_specs_value|  (car_specs_value.to_i > 5) == false}
+
+p cars
 
 
 
