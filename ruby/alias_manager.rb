@@ -16,17 +16,11 @@ name = gets.chomp
   else
   	name = name.split('')
     reversed_name = name.reverse
+    reversed_name = reversed_name.join
+    p reversed_name
   end 
-    
-
-    name.map! do |letter|
-	puts letter
-	letter.next
-    end
-  end 
-
-    name_reverse(name)
-  end
+ 
+ 
 
  #or
 
