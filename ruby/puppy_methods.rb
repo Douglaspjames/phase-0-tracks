@@ -5,5 +5,57 @@ class Puppy
     toy
   end
 
+  def speak(num)
+    num.times do
+      puts "Woof!"
+    end
+  end
+
+  def roll_over
+    puts "*rolls over*"
+  end
+
+  def dog_years(human_years)
+    dog_years = human_years * 7
+    puts dog_years
+  end
+
+  def play_dead
+    puts "Is he dead?"
+    puts "No, he's just playing dead!"
+  end
+
+  def initialize
+    puts "Initializing new Puppy instance..."
+  end
+
 end
 
+class Kitten
+
+  def initialize
+    puts "Initializing new Kitten instance..."
+  end
+
+  def purr(num)
+    num.times do
+      puts "Purr!"
+    end
+  end
+
+  def play_with_string
+    puts "I'm playing with string!"
+  end
+
+end
+
+fido = Puppy.new
+fido.fetch("ball")
+fido.speak(3)
+fido.roll_over
+fido.dog_years(8)
+fido.play_dead
+
+50.times do 
+  initialize
+end
