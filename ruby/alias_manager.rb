@@ -9,15 +9,21 @@ change all consonants to next consonant
 
 puts "What is your name?"
 
-name=gets.chomp
+name = gets.chomp
 
   if name == "quit"
 	puts "Thank you!"
   else
+  	name = name.split('')
+    reversed_name = name.reverse
+  end 
+    
 
-    def name_reverse(x)
-	    name = (x).split('').reverse.map! { |letter| letter.next }
-    end 
+    name.map! do |letter|
+	puts letter
+	letter.next
+    end
+  end 
 
     name_reverse(name)
   end
