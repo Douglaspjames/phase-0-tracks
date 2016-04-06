@@ -90,7 +90,7 @@ print_list(example_list)
 # Strings, integers, other methods
 
 # How can you pass information between methods?
-# Using variables.(?)
+# As parameters or as instance variables.
 
 # What concepts were solidified in this challenge, and what concepts are still confusing?
 # How to write proper methods was solidified. That being said, I still feel I don't fully understand the .each method.
