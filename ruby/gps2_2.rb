@@ -75,3 +75,24 @@ p item_add(example_list, "yams", 99)
 p item_remove(example_list, "yams")
 p item_update_quantity(example_list, "apples", 98)
 print_list(example_list)
+
+
+# What did you learn about pseudocode from working on this challenge?
+# I learned that the clearer and simpler (and more descriptive) that you write it, the easier it's going to make writing your code.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# I don't know that there's any tradeoffs. It seemed to me that using arrays and hashes was perfect for this challenge. Perhaps i'm not understanding the question?
+
+# What does a method return?
+# The evaluated result of the last line that is executed.
+
+# What kind of things can you pass into methods as arguments?
+# Strings, integers, other methods
+
+# How can you pass information between methods?
+# Using variables.(?)
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# How to write proper methods was solidified. That being said, I still feel I don't fully understand the .each method.
+
+
