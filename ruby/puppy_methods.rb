@@ -1,5 +1,10 @@
 class Puppy
 
+  # Release 1: Declare an initialize method
+  def initialize
+    puts "Initializing new Puppy instance..."
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -25,18 +30,16 @@ class Puppy
     puts "No, he's just playing dead!"
   end
 
-  def initialize
-    puts "Initializing new Puppy instance..."
-  end
-
 end
 
+
+# Release 2: Write your own class and experiment
 class Kitten
 
   def initialize
-    puts "Initializing new Kitten instance..."
+    puts "Welcome new kitty!"
   end
-
+ 
   def purr(num)
     num.times do
       puts "Purr!"
@@ -49,6 +52,8 @@ class Kitten
 
 end
 
+
+# Driver code
 fido = Puppy.new
 fido.fetch("ball")
 fido.speak(3)
@@ -56,6 +61,14 @@ fido.roll_over
 fido.dog_years(8)
 fido.play_dead
 
-50.times do 
-  initialize
+
+kittens = []
+
+50.times do
+  kittens << Kitten.new
+end
+
+kittens.each do |kitten|
+  kitten.purr(3)
+  kitten.play_with_string
 end
