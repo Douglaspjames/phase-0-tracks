@@ -27,3 +27,51 @@
 # steps: print strings with interpolated #{} keys and values
 # output: strings
 
+def create_list(item_string)
+  item_array = item_string.split(' ')
+  item_hash = {}
+  item_array.each do |item|
+    item_hash[item] = 1
+  end
+  print_list(item_hash)
+end
+
+def item_add(list, item, quantity)
+  list[item] = quantity
+  list
+end
+
+def item_remove(list, item)
+  list.delete(item)
+  list
+end
+
+def item_update_quantity(list, item, quantity)
+  list[item] = quantity
+  list
+end
+
+def print_list(hash)
+  puts "GROCERY LIST"
+  hash.each do |item, quantity|
+    puts "#{quantity} | #{item}"
+  end
+end
+
+
+
+  
+  
+  
+  
+  
+  
+#### DRIVER CODE
+  
+example_string = "carrots apples cereal pizza"
+example_list = create_list(example_string)
+
+p item_add(example_list, "yams", 99)
+p item_remove(example_list, "yams")
+p item_update_quantity(example_list, "apples", 98)
+print_list(example_list)
