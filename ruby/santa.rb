@@ -1,5 +1,6 @@
 class Santa
-	attr_reader :gender, :ethnicity
+	attr_reader :gender, :ethnicity, 
+	attr_accessor :age
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -52,11 +53,11 @@ end
 
 
 
-santas = []
-santas << Santa.new("male", "white")
-santas << Santa.new("female", "latino")
-santas << Santa.new("male", "russian")
-santas << Santa.new("male", "latvian")
+# santas = []
+# santas << Santa.new("male", "white")
+# santas << Santa.new("female", "latino")
+# santas << Santa.new("male", "russian")
+# santas << Santa.new("male", "latvian")
 
 santa = Santa.new("male", "sami")
 santa.get_mad_at("Rudolph")
@@ -69,4 +70,29 @@ santas.each do |people|
   people.speak("hello")
   people.eat_milk_and_cookies("chocalate chip")
 end
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["Chukchi", "Sami", "white", "Japanese-African", "Inuit", "Mystical Creature (unicorn)", "N/A"]
+#example_genders.length.times do |i|
+  #santas << Santa.new(example_genders[i], example_ethnicities[i])
+
+#Create multiple santas
+#add random gender and ethnicity, random age between 0-140
+#print details
+
+
+
+santas = []
+
+10.times do |x|
+	santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+	santas[x].age = rand(0..140)
+	p santas[x].age
+	p santas[x].gender
+	p santas[x].ethnicity
+end
+
+
+	#santas[9].gender
+
 
