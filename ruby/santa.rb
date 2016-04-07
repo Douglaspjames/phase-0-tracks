@@ -8,7 +8,7 @@ class Santa
 		@age = 0
   end
 
-  def speak
+  def speak(words)
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
 
@@ -16,28 +16,48 @@ class Santa
   	puts "That was a good #{cookie} cookie!"
   end
 
-  def age
-  	@age
+  def gender
+  	@gender
   end
 
-  def array
-  	@reindeer_ranking
+  def ethnicity
+  	@ethnicity
   end
 
-  def age_change=
+  def celebrate_birthday(age)
   	@age = @age +1
   end
 
+  def get_mad_at(bad_reindeer_name)
+    index = @reindeer_ranking.index(bad_reindeer_name)
+    @reindeer_ranking.delete_at(index)
+    @reindeer_ranking.push(reindeer_name)
+    puts @reindeer_ranking
+  end
+
+
+
+  # def age
+  # 	@age
+  # end
+
+  # def rank
+  # 	@reindeer_ranking
+  # end
+
+  # def age_change=
+  # 	@age = @age +1
+  # end
+
 end
 
-#p reindeer_ranking.get_mad_at("rudolph")
-
-fred_claus = Santa.new
-fred_claus.speak
-fred_claus.eat_milk_and_cookies("oatmeal raisin")
 
 
-puts "Fred Claus is #{@age} year old!"
+# fred_claus = Santa.new
+# fred_claus.speak
+# fred_claus.eat_milk_and_cookies("oatmeal raisin")
+
+
 
 santas = []
 santas << Santa.new("male", "white")
@@ -45,11 +65,14 @@ santas << Santa.new("female", "latino")
 santas << Santa.new("male", "russian")
 santas << Santa.new("male", "latvian")
 
+santa = Santa.new("male", "sami")
+santa.get_mad_at("rudolph")
+santa.celebrate_birthday
+p santa
 
 
-
-
-# santas.each do |people|
-#   people.speak("hello")
-#   people.eat_milk_and_cookies("chocalate chip")
+santas.each do |people|
+  people.speak("hello")
+  people.eat_milk_and_cookies("chocalate chip")
+end
 
