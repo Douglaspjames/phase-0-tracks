@@ -84,7 +84,7 @@ example_ethnicities = ["Chukchi", "Sami", "white", "Japanese-African", "Inuit", 
 
 santas = []
 
-10.times do |x|
+500.times do |x|
 	santas << Santa.new(example_genders.sample, example_ethnicities.sample)
 	santas[x].age = rand(0..140)
 	p santas[x].age
