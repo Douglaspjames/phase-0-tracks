@@ -28,12 +28,7 @@ class Santa
   	@age = @age +1
   end
 
-  def get_mad_at(bad_reindeer_name)
-    index = @reindeer_ranking.index(bad_reindeer_name)
-    @reindeer_ranking.delete_at(index)
-    @reindeer_ranking.push(reindeer_name)
-    puts @reindeer_ranking
-  end
+  
 
 
 
