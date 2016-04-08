@@ -20,7 +20,6 @@ class Drum_set
 	attr_accessor :color, :age
 
 	def initialize(brand, color, cymbal, age)
-		puts "Initializing drum set..."
 		@brand = brand
 		@cymbals = cymbal
 		@color = color
@@ -66,12 +65,12 @@ drum_sets = []
 	drum_sets << Drum_set.new(brands.sample, colors.sample, cymbal.sample, ages.sample)
 	puts ""
 	puts ""
-	p drum_sets[x].sound(@brand)
+	drum_sets[x].sound(@brand)
 	puts "Test the kick drum!"
-	p drum_sets[x].kick_drum(rand(3..6))
+	drum_sets[x].kick_drum(rand(3..6))
 	puts "Crash the cumbal!"
-	p drum_sets[x].crash(rand(3..6))
-	p drum_sets[x].age
+	drum_sets[x].crash(rand(3..6))
+	drum_sets[x].age
 	p drum_sets
 end
 
@@ -79,7 +78,7 @@ end
 user_drumset_choices = []
 
 loop do
-puts "Welcome t0 the drumset creator"
+puts "Welcome to the drumset creator"
 puts "Would you like to create a drumset?(Y/N)"
   response = gets.chomp
     if response == "Y"
@@ -101,6 +100,8 @@ puts "Would you like to create a drumset?(Y/N)"
 end 
 
 p user_drumset_choices
+
+
 
 
 
