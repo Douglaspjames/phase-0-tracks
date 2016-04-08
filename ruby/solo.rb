@@ -78,11 +78,12 @@ end
 
 user_drumset_choices = []
 
-puts "Welcome th the drumset creator"
+loop do
+puts "Welcome t0 the drumset creator"
 puts "Would you like to create a drumset?(Y/N)"
   response = gets.chomp
-    while response == "Y"
-       puts "Choose the brand."
+    if response == "Y"
+        puts "Choose the brand."
     	p brands
     	brand_choice = gets.chomp
     	puts "Choose the color/finish"
@@ -94,8 +95,10 @@ puts "Would you like to create a drumset?(Y/N)"
     	puts "How old should the drumset be? (In years, 1-10)"
     	age_choice = gets.chomp
     	user_drumset_choices << Drum_set.new(brand_choice, color_choice, cymbal_choice, age_choice)
+    else
+    	break
     end
- 
+end 
 
 p user_drumset_choices
 
