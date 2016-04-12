@@ -28,6 +28,7 @@ class VirusPredictor
   end
 
   private
+  #If you move private above virus_effects the method doesn't work! To call private methode you need to be within the scope of the project.
 
 #takes the population density and population and state and predicts a number of deaths
   def predicted_deaths
