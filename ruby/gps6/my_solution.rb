@@ -34,7 +34,7 @@ class VirusPredictor
 
 #takes the population density and population and state and predicts a number of deaths
   def predicted_deaths
-    # predicted deaths is solely based on population density
+    #predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
     elsif @population_density >= 150
@@ -50,6 +50,9 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+#I worked on this A LONG TIME! but could not figure out how to write an algorithym that 
+#refactors the code in "predicted_deaths" and "speed_of_spread"
 
 #takes population density and state and predicts the speed of the spread of the virus.
   def speed_of_spread
