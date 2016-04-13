@@ -28,7 +28,9 @@ class VirusPredictor
   end
 
   private
-  #If you move private above virus_effects the method doesn't work! To call private methode you need to be within the scope of the project.
+  #If you move private above virus_effects the method doesn't work! To call private methode you need to be 
+  #within the scope of the project. It makes it safer so that methods that you do not want to be interacted with by the user interface 
+  #are hidden.
 
 #takes the population density and population and state and predicts a number of deaths
   def predicted_deaths
@@ -101,3 +103,22 @@ end
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# The hash rocket seperates keys from values. If you have symbols for your keys you can use a :
+
+# What does require_relative do? How is it different from require?
+#require_relative complements the builtin method require by allowing you to 
+#load a file that is relative to the file containing the require_relative statement.
+#It's different from require because with require you can provide an address of a file in a different directory.
+
+# What are some ways to iterate through a hash?
+#.each, .map, .map!
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+#They were redundant and not needed. The program worked without them because all of the data is provided when a new instance of the 
+#class in initialized.
+
+# What concept did you most solidify in this challenge?
+#Private methods and the scope of instance variables.
+
+
