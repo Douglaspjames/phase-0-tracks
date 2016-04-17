@@ -9,6 +9,7 @@ class Genie
 	def initialize(name, age)
 		@name = name
 		@age = age
+		@submitted_wishes = {}
 	end
 
 	def appear(genie)
