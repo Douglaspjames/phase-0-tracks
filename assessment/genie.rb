@@ -10,11 +10,18 @@ class Genie
 		@name = name
 		@age = age
 	end
+
+	def appear(genie)
+		puts "*POOF!* I am #{genie}, and you have three wishes!"
+	end
 end
 
 genies = []
-genies << Genie.new("Bob", 3298)
-genies << Genie.new("Youssef", 2716)
+bob = Genie.new("Bob", 3298)
+genies << bob
+youssef = Genie.new("Youssef", 2716)
+genies << youssef
 p genies
 
-#puts "Your genie is named #{@name}, and he is #{@age} years old"
+#Add an instance method to your class, appear, that prints *POOF!* I am <your genie's name here>, 
+#and you have three wishes! Add the appropriate driver code to test your work.
