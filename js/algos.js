@@ -22,3 +22,6 @@ var sorted3 = long3.sort(function (a, b) { return b.length - a.length });
 console.log(sorted[0]);
 console.log(sorted2[0]);
 console.log(sorted3[0]);
+
+
+//write a function that takes two objects and checks to see if the objects share at least one key-value pair.
