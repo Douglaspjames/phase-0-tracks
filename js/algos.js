@@ -45,45 +45,35 @@ console.log("----------")
 // if the objects don't share any common keys or values return "false"
 
 function compare(x, y) {
-var share = 0;
-var key1 = Object.keys(x);
-var key2 = Object.keys(y);
-var value1 = [];
-var value2 = [];
+var share = 1;
 
- for (var key in x) {
-    value1.push(x[key]);
- }
+  var value1 = [];
 
- for (var key in y) {
-    value2.push(y[key]);
-  }
-
- for (var i = 0; i < key1.length; i++) {
-   if (key1[i] == key2[i] && value1[i] == value2[i]) {
-      share++; 
+    for (key in x) {
+    var a = x[key];
+    value1.push(a)
     }
+
+  var value2 = [];
+
+    for (key in y) {
+    var b = y[key];
+    value2.push(b)
   }
 
-  if (share > 0) {
-    return true;
-  }
+  var key1 = Object.keys(x);
+  var key2 = Object.keys(y);
+  
+    for (var i = 0; i < key1.length; i++) {
+    if (key1[i] == key2[i] && value1[i] == value2[i]) 
+    { share = 2; }
+    }
+
+  if (share > 1) {
+    return true;}
   else {
-    return false;
-  }
+    return false;}
 }
-
-// function compare(x, y) {
-// var 
-
-//   var obj = {a:1, b:2, c:3};
-    
-// for (var prop in obj) {
-//   console.log("obj." + prop + " = " + obj[prop]);
-// }
-
-
-
 
 var man1 = {name: "Steven", 'age': 54};
 var man2 = {name: "Tamir", age: 54};
@@ -92,4 +82,25 @@ var man4 = {name: "Prince", age: 50}
 
 console.log(compare(man1, man2));
 console.log(compare(man3, man4));
+
+
+
+//Write function that takes an integer as an argument
+//it builds and returns an array of strings that is the given length of integer
+//if we give "3" as argument it returns an array of 3 random words
+//words should be a minimum of 1 letter and a maximum of 10
+//need to know how to generate a random number
+
+//Add driver code that does the following 10 times: generates an array, 
+//prints the array, feeds the array to your "longest word" function, and prints the result.
+
+
+
+
+// function build_array(x) {
+//     for (var i = 0; i < x.length; i++) {
+//    if (key1[i] == key2[i] && value1[i] == value2[i]) {
+//       share++;              // The function returns the product of p1 and p2
+// }
+
 
