@@ -30,6 +30,8 @@ console.log(sorted3[0]);
 console.log(sorted4[0]);
 
 
+console.log("----------")
+
 //write a function that takes two objects and checks to see if the objects share at least one key-value pair.
 //If we called your function with {name: "Steven", age: 54} and {name: "Tamir", age: 54}, 
 //the function would return true, because at least one key-value pair matches between the two objects. 
@@ -42,17 +44,52 @@ console.log(sorted4[0]);
 //if the objects share at least one key or value return "true"
 // if the objects don't share any common keys or values return "false"
 
-var man1 = {name: "Steven", 'age': 54};
-var man2 = {name: "Tamir", age: 54};
-var men = man1.concat(man2);
-
 function compare(x, y) {
-  return x + y;
+var share = 0;
+var key1 = Object.keys(x);
+var key2 = Object.keys(y);
+var value1 = [];
+var value2 = [];
 
-var arrayLength = men.length;
-for (var i = 0; i < arrayLength; i++) {
-    alert(myStringArray[i]);
-    //Do something
+ for (var key in x) {
+    value1.push(x[key]);
+ }
+
+ for (var key in y) {
+    value2.push(y[key]);
+  }
+
+ for (var i = 0; i < key1.length; i++) {
+   if (key1[i] == key2[i] && value1[i] == value2[i]) {
+      share++; 
+    }
+  }
+
+  if (share > 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
+// function compare(x, y) {
+// var 
+
+//   var obj = {a:1, b:2, c:3};
+    
+// for (var prop in obj) {
+//   console.log("obj." + prop + " = " + obj[prop]);
+// }
+
+
+
+
+var man1 = {name: "Steven", 'age': 54};
+var man2 = {name: "Tamir", age: 54};
+var man3 = {name: "Fred Gloob", age: 40}
+var man4 = {name: "Prince", age: 50}
+
+console.log(compare(man1, man2));
+console.log(compare(man3, man4));
 
