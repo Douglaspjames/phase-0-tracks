@@ -95,12 +95,44 @@ console.log(compare(man3, man4));
 //prints the array, feeds the array to your "longest word" function, and prints the result.
 
 
+function buildArray(x) {
+	var randomWordArray = [];
+     for (var i = 0; i < x.length; i++) {
+     	randomWordArray.push(buildWord());
+     }
+     return randomWordArray;
+ }
+    
+    
+function buildWord() {
+	var randomNumber = Math.floor(Math.random() * 10) + 1 
+    var text = " ";
 
+    var charset = "abcdefghijklmnopqrstuvwxyz";
 
-// function build_array(x) {
-//     for (var i = 0; i < x.length; i++) {
-//    if (key1[i] == key2[i] && value1[i] == value2[i]) {
-//       share++;              // The function returns the product of p1 and p2
-// }
+    for( var i=0; i < randomNumber; i++ ) {
+        text += charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+    
+    return text;
+    
+    }
+ 
+ //Add driver code that does the following 10 times: generates an array, prints the array, 
+ //feeds the array to your "longest word" function, and prints the result.
+
+    
+var index = 1; 
+
+do {
+var finalArray = [];
+finalArray = buildArray(Math.floor(Math.random() * 10) + 1);
+console.log(finalArray);
+var sorted5 = finalArray.sort(function (a, b) { return b.length - a.length });
+console.log(sorted5)
+index += 1
+}	
+while (index < 11);
+    
 
 
