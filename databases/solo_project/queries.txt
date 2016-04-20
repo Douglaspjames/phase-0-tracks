@@ -36,5 +36,20 @@ sqlite> SELECT * FROM goats;
 4|Peanut|2|true|2
 
 
+INNER JOIN:
+sqlite> SELECT goats.name, goats.age, goats.screams, goats.farm_id, farms.name FROM goats INNER JOIN farms ON goats.farm_id = farms.id;
+Walter|5|true|1|Sugarbush Farm
+Gloob|10|true|1|Sugarbush Farm
+Peanut|2|true|2|The Screaming Goat
 
+
+LEFT JOIN:
+sqlite> SELECT goats.name, goats.age, goats.screams, goats.farm_id, farms.name FROM goats LEFT JOIN farms ON goats.farm_id = farms.id;
+Walter|5|true|1|Sugarbush Farm
+Gloob|10|true|1|Sugarbush Farm
+Peanut|2|true|2|The Screaming Goat
+
+
+FULL JOIN:
+Well… it told me a full join is not supported?
 
