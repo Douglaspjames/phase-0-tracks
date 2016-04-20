@@ -1,0 +1,40 @@
+sqlite> SELECT * FROM goats;
+1|Walter|5|true|1
+2|Steve|7|true|2
+3|Gloob|10|true|1
+4|Peanut|2|true|2
+
+
+Steve moved to Ohio!
+sqlite> UPDATE goats SET farm_id=1 WHERE name="Steve";
+sqlite> SELECT * FROM goats, farms WHERE goats.farm_id = farms.id;
+1|Walter|5|true|1|1|Sugarbush Farm|Ohio
+2|Steve|7|true|1|1|Sugarbush Farm|Ohio
+3|Gloob|10|true|1|1|Sugarbush Farm|Ohio
+4|Peanut|2|true|2|2|The Screaming Goat|Georgia
+
+
+sqlite> SELECT * FROM goats, farms WHERE goats.farm_id = farms.id;
+1|Walter|5|true|1|1|Sugarbush Farm|Ohio
+2|Steve|7|true|2|2|The Screaming Goat|Georgia
+3|Gloob|10|true|1|1|Sugarbush Farm|Ohio
+4|Peanut|2|true|2|2|The Screaming Goat|Georgia
+
+
+sqlite> SELECT goats.name, goats.age, farms.name FROM goats JOIN farms ON goats.farm_id = farms.id;
+Walter|5|Sugarbush Farm
+Steve|7|Sugarbush Farm
+Gloob|10|Sugarbush Farm
+Peanut|2|The Screaming Goat
+
+
+Steve escaped on the way to Ohio!
+sqlite> DELETE FROM goats WHERE name = "Steve";
+sqlite> SELECT * FROM goats;
+1|Walter|5|true|1
+3|Gloob|10|true|1
+4|Peanut|2|true|2
+
+
+
+
