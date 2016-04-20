@@ -97,7 +97,7 @@ console.log(compare(man3, man4));
 
 function buildArray(x) {
 	var randomWordArray = [];
-     for (var i = 0; i < x.length; i++) {
+     for (var i = 0; i < x; i++) {
      	randomWordArray.push(buildWord());
      }
      return randomWordArray;
@@ -126,11 +126,17 @@ var index = 1;
 
 do {
 var finalArray = [];
-finalArray = buildArray(Math.floor(Math.random() * 10) + 1);
-console.log(finalArray);
+finalArray = buildArray(Math.floor(Math.random() * 2) + 1);
+// console.log("This is the finalArray!!!!!!!!!!")
+// console.log(finalArray);
+for(var i = 0; i < finalArray.length; i++) {
+	console.log("This is finalArray value " + i.toString() + " " + finalArray[i]);
+}
 var sorted5 = finalArray.sort(function (a, b) { return b.length - a.length });
-console.log(sorted5)
+// console.log("This is the sorted5!!!!!!!!!!")
+// console.log(sorted5)
 index += 1
+console.log("-------------------------------------")
 }	
 while (index < 11);
     
