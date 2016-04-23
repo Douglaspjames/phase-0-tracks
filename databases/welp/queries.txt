@@ -1,0 +1,22 @@
+#2
+sqlite> SELECT * FROM businesses, reviews, users WHERE reviews.business_id = businesses.id and reviews.user_id = users.id;
+6|JoeBob's Sportz|1|4|Saucy food!|6|1|1|Bradford|Pitt
+5|Sushi World|2|5|Crazy good food!|5|2|2|Mandy|Kaling
+5|Sushi World|3|5|Really swell food|5|3|3|Angela|Jolie
+1|Grundy Hollow Wedding Chapel|4|1|Terrible place for a wedding|1|5|5|Holly|Berry
+
+
+#3
+sqlite> SELECT users.firstname, users.lastname, businesses.name, reviews.stars, reviews.comment FROM businesses, users JOIN reviews ON reviews.business_id = businesses.id and reviews.user_id = users.id;
+Bradford|Pitt|JoeBob's Sportz|4|Saucy food!
+Mandy|Kaling|Sushi World|5|Crazy good food!
+Angela|Jolie|Sushi World|5|Really swell food
+Holly|Berry|Grundy Hollow Wedding Chapel|1|Terrible place for a wedding
+
+
+#4
+sqlite> SELECT * FROM businesses, reviews, users WHERE reviews.business_id = businesses.id and reviews.user_id = users.id and business_id=5;
+5|Sushi World|2|5|Crazy good food!|5|2|2|Mandy|Kaling
+5|Sushi World|3|5|Really swell food|5|3|3|Angela|Jolie
+
+
