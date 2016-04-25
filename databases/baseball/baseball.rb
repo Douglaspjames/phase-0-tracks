@@ -100,29 +100,99 @@ SQL
 
 
 db.execute(create_team_cmd)
-db.execute(create_players_cmd)
+db.execute(create_first_basemen_cmd)
+db.execute(create_second_basemen_cmd)
+db.execute(create_shortstops_cmd)
+db.execute(create_third_basemen_cmd)
+db.execute(create_left_fielders_cmd)
+db.execute(create_center_fielders_cmd)
+db.execute(create_right_fielders_cmd)
+db.execute(create_catchers_cmd)
+db.execute(create_pitchers_cmd)
 
-positions = ["1B", "2B", "SS", "3B", "LF", "CF", "RF", "C", "P"]
 
 
-def create_players(db, name, position)
-	db.execute("INSERT INTO players (name, position) VALUES (?, ?)", [name, position])
+def create_first_basemen(db, name)
+	db.execute("INSERT INTO first_basemen (name) VALUES (?)", [name])
 end
 
-18.times do
-  create_players(db, Faker::Name.name, positions)
+10.times do
+  create_first_basemen(db, Faker::Name.name)
 end
 
-def create_positions
-	db.execute("INSERT INTO players (position) VALUES (?)", [])
+def create_second_basemen(db, name)
+	db.execute("INSERT INTO second_basemen (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_second_basemen(db, Faker::Name.name)
+end
+
+def create_shortstops(db, name)
+	db.execute("INSERT INTO shortstops (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_shortstops(db, Faker::Name.name)
+end
+
+def create_third_basemen(db, name)
+	db.execute("INSERT INTO third_basemen (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_third_basemen(db, Faker::Name.name)
+end
+
+def create_left_fielders(db, name)
+	db.execute("INSERT INTO left_fielders (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_left_fielders(db, Faker::Name.name)
+end
+
+def create_center_fielders(db, name)
+	db.execute("INSERT INTO center_fielders (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_center_fielders(db, Faker::Name.name)
+end
+
+def create_right_fielders(db, name)
+	db.execute("INSERT INTO right_fielders (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_right_fielders(db, Faker::Name.name)
+end
+
+def create_catchers(db, name)
+	db.execute("INSERT INTO catchers (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_catchers(db, Faker::Name.name)
+end
+
+def create_pitchers(db, name)
+	db.execute("INSERT INTO pitchers (name) VALUES (?)", [name])
+end
+
+10.times do
+  create_pitchers(db, Faker::Name.name)
+end
+
+def create_team(db, 1b, 2b, ss, 3b, lf, cf, rf, c, p)
+	db.execute("INSERT INTO team (position, name) VALUES (?, ?)", [position, name])
+	end
 
 #============================================================================#
 
 #method to create player lineup
 
-def create_lineup(db, name)
-	db.execute("INSERT INTO players (position, name) VALUES (?, ?)", [position, name])
-	end
+
 
 def add_1B(db, id, 1B)
 	db.execute("UPDATE players SET 1B=? WHERE id=?", [1B, id])
