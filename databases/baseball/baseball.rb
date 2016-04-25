@@ -205,8 +205,8 @@ def create_team(db, position_1b, 1b, position_2b, 2b, position_ss, ss, position_
 
 
 
-def modify_1B(db, id, 1B)
-	db.execute("UPDATE players SET 1B=? WHERE id=?", [1B, id])
+#def modify_1B(db, id, 1B)
+	#db.execute("UPDATE players SET 1B=? WHERE id=?", [1B, id])
 
 
 
@@ -220,16 +220,9 @@ def modify_1B(db, id, 1B)
 
 
 
-def print_lineup(db)
-	puts "Here is your lineup:"
-	lineup = db.execute("SELECT * FROM lineup")
-	lineup.each do |player|
-		puts "#{player['position']}. #{player['name']}"
-	end
-end
 
 
-#Print pitchers!!!!!
+
 
 puts "Create you fantasy baseball team!"
 puts ""
@@ -242,8 +235,11 @@ def print_first_basemen (db)
 	end
 end
 
+print_first_basemen
 puts "Enter the number of chosen first baseman: "
-    1B = gets.chomp.to_i
+    1b = gets.chomp.to_i
+    position_1b = "1B"
+
 
 def print_second_basemen(db)
 	puts "Here are the second basemen to choose from:"
@@ -253,8 +249,10 @@ def print_second_basemen(db)
 	end
 end
 
+print_second_basemen
 puts "Enter the number of chosen second baseman: "
-    2B = gets.chomp.to_i
+    2b = gets.chomp.to_i
+    position_2b = "2B"
 
 def print_shortstops(db)
 	puts "Here are the shortstops to choose from:"
@@ -264,46 +262,100 @@ def print_shortstops(db)
 	end
 end
 
+print_shortstops
 puts "Enter the number of chosen shortstop: "
-    SS = gets.chomp.to_i
+    ss = gets.chomp.to_i
+    position_ss = SS
 
-def print_shortstops(db)
-	puts "Here are the shortstops to choose from:"
-	short = db.execute("SELECT * FROM shortstops")
-	short.each do |player|
+def print_third_basemen(db)
+	puts "Here are the third basemen to choose from:"
+	third = db.execute("SELECT * FROM third_basemen")
+	third.each do |player|
 		puts "#{player['id']}. #{player['name']}"
 	end
 end
 
-puts "Enter the number of chosen shortstop: "
-    SS = gets.chomp.to_i
+print_third_basemen
+puts "Enter the number of chosen third baseman: "
+    3b = gets.chomp.to_i
+    position_3b = 3B
     
 
-    
-    
-    print "Enter the name of 2B: "
-    2B = gets.chomp
-    
-    print "Enter the name of SS: "
-    SS = gets.chomp
+def print_left_fielders(db)
+	puts "Here are the left fielders to choose from:"
+	left = db.execute("SELECT * FROM left_fielders")
+	left.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
 
-    print "Enter the name of 3B: "
-    3B = gets.chomp
+print_left_fielders
+puts "Enter the number of chosen left fielder: "
+    lf = gets.chomp.to_i
+    position_lf = LF
 
-    print "Enter the name of OF_1: "
-    OF_1 = gets.chomp
+def print_center_fielders(db)
+	puts "Here are the center fielders to choose from:"
+	center = db.execute("SELECT * FROM center_fielders")
+	center.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
 
-    print "Enter the name of OF_2: "
-    OF_2 = gets.chomp
+print_center_fielders
+puts "Enter the number of chosen center fielder: "
+    cf = gets.chomp.to_i
+    position_cf = CF
 
-    print "Enter the name of OF_3: "
-    OF_3 = gets.chomp
+def print_right_fielders(db)
+	puts "Here are the right fielders to choose from:"
+	right = db.execute("SELECT * FROM right_fielders")
+	right.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
 
-    print "Enter the name of C: "
-    C = gets.chomp
+print_right_fielders
+puts "Enter the number of chosen right fielder: "
+    rf = gets.chomp.to_i
+    position_rf = RF
 
-    print "Enter the name of P (enter number from list): "
-    pitcher_id = gets.chomp
+def print_catchers(db)
+	puts "Here are the catchers to choose from:"
+	cat = db.execute("SELECT * FROM catchers")
+	cat.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
 
-    create_team(position, name)
+print_catchers
+puts "Enter the number of chosen catchers: "
+    c = gets.chomp.to_i
+    position_c = C
+
+def print_pitchers(db)
+	puts "Here are the pitchers to choose from:"
+	pitch = db.execute("SELECT * FROM catchers")
+	pitch.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
+
+print_pitchers
+puts "Enter the number of chosen pitcher: "
+    p = gets.chomp.to_i
+    position_p = P
+
+
+create_team(db, position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
+
+def print_team(db)
+	puts "Here is your team:"
+	lineup = db.execute("SELECT * FROM team")
+	lineup.each do |player|
+		puts "#{player['position']}. #{player['name']}"
+	end
+end
+
+print_team(db)
 
