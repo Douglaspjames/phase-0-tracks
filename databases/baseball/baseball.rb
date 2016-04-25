@@ -14,33 +14,107 @@ db.results_as_hash = true
 create_team_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS team(
     id INTEGER PRIMARY KEY,
-    position VARCHAR(255),
-    name VARCHAR(255),
-    bench_id INT,
-    FOREIGN KEY (bench_id) REFERENCES bench_players(id)
+    first_baseman_id INT,
+    FOREIGN KEY (first_baseman_id) REFERENCES first_basemen(id)
+    second_baseman_id INT,
+    FOREIGN KEY (second_baseman_id) REFERENCES second_basemen(id)
+    shortstop_id INT,
+    FOREIGN KEY (shortstop_id) REFERENCES shortstops(id)
+    third_baseman_id INT,
+    FOREIGN KEY (third_baseman_id) REFERENCES third_basemen(id)
+    left_fielder_id INT,
+    FOREIGN KEY (left_fielder_id) REFERENCES left_fielders(id)
+    center_fielder_id INT,
+    FOREIGN KEY (center_fielder_id) REFERENCES center_fielders(id)
+    right_fielder_id INT,
+    FOREIGN KEY (right_fielder_id) REFERENCES right_fielders(id)
+    catcher_id INT,
+    FOREIGN KEY (catcher_id) REFERENCES catchers(id)
+    pitcher_id INT,
+    FOREIGN KEY (pitcher_id) REFERENCES pitchers(id)
   )
 SQL
 
-create_players_cmd = <<-SQL
-    CREATE TABLE IF NOT EXISTS bench_players(
+create_first_basemen_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS first_basemen(
     id INTEGER PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
   )
 SQL
 
-# create lineup and pitchers tables (if it's not there already)
-db.execute(create_lineup_cmd)
-db.execute(create_pitchers_cmd)
+create_second_basemen_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS second_basemen(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_shortstops_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS shortstops(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_third_basemen_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS third_basemen(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_left_fielders_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS left_fielders(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_center_fielders_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS center_fielders(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_right_fielders_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS right_fielders(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_catchers_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS catchers(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
+
+create_pitchers_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS pitchers(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+  )
+SQL
 
 
-def create_players(db, position, name)
-	position = ["1B", "2B", "SS", ]
-  db.execute("INSERT INTO bench_players (name) VALUES (?)", [name])
+db.execute(create_team_cmd)
+db.execute(create_players_cmd)
+
+positions = ["1B", "2B", "SS", "3B", "LF", "CF", "RF", "C", "P"]
+
+
+def create_players(db, name, position)
+	db.execute("INSERT INTO players (name, position) VALUES (?, ?)", [name, position])
 end
 
 18.times do
-  create_players(db, Faker::Name.name)
+  create_players(db, Faker::Name.name, positions)
 end
+
+def create_positions
+	db.execute("INSERT INTO players (position) VALUES (?)", [])
 
 #============================================================================#
 
