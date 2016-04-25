@@ -10,9 +10,9 @@ require 'faker'
 db = SQLite3::Database.new("baseball.db")
 db.results_as_hash = true
 
-#create lineup
-create_lineup_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS lineup(
+#create team
+create_team_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS team(
     id INTEGER PRIMARY KEY,
     position VARCHAR(255),
     name VARCHAR(255),
@@ -21,7 +21,7 @@ create_lineup_cmd = <<-SQL
   )
 SQL
 
-create_bench_cmd = <<-SQL
+create_players_cmd = <<-SQL
     CREATE TABLE IF NOT EXISTS bench_players(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255)
@@ -33,12 +33,13 @@ db.execute(create_lineup_cmd)
 db.execute(create_pitchers_cmd)
 
 
-def create_bench_players(db, name)
+def create_players(db, position, name)
+	position = ["1B", "2B", "SS", ]
   db.execute("INSERT INTO bench_players (name) VALUES (?)", [name])
 end
 
-5.times do
-  create_bench_players(db, Faker::Name.name)
+18.times do
+  create_players(db, Faker::Name.name)
 end
 
 #============================================================================#
@@ -78,6 +79,7 @@ end
 
     print "Enter the name of 1B: "
     1B = gets.chomp
+    add_player(1B)
     
     print "Enter the name of 2B: "
     2B = gets.chomp
@@ -103,5 +105,5 @@ end
     print "Enter the name of P (enter number from list): "
     pitcher_id = gets.chomp
 
-    create_lineup(1B, 2B, SS, 3B, OF_1, OF_2, OF_3, C, pitcher_id)
+    create_lineup(position, name)
 
