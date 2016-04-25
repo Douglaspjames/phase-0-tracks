@@ -14,22 +14,31 @@ db.results_as_hash = true
 create_team_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS team(
     id INTEGER PRIMARY KEY,
+    position_1b VARCHAR(255),
     first_baseman_id INT,
     FOREIGN KEY (first_baseman_id) REFERENCES first_basemen(id)
+    position_2b VARCHAR(255),
     second_baseman_id INT,
     FOREIGN KEY (second_baseman_id) REFERENCES second_basemen(id)
+    position_ss VARCHAR(255),
     shortstop_id INT,
     FOREIGN KEY (shortstop_id) REFERENCES shortstops(id)
+    position_3b VARCHAR(255),
     third_baseman_id INT,
     FOREIGN KEY (third_baseman_id) REFERENCES third_basemen(id)
+    position_lf VARCHAR(255),
     left_fielder_id INT,
     FOREIGN KEY (left_fielder_id) REFERENCES left_fielders(id)
+    position_cf VARCHAR(255),
     center_fielder_id INT,
     FOREIGN KEY (center_fielder_id) REFERENCES center_fielders(id)
+    position_rf VARCHAR(255),
     right_fielder_id INT,
     FOREIGN KEY (right_fielder_id) REFERENCES right_fielders(id)
+    position_c VARCHAR(255),
     catcher_id INT,
     FOREIGN KEY (catcher_id) REFERENCES catchers(id)
+    position_p VARCHAR(255),
     pitcher_id INT,
     FOREIGN KEY (pitcher_id) REFERENCES pitchers(id)
   )
@@ -184,8 +193,10 @@ end
   create_pitchers(db, Faker::Name.name)
 end
 
-def create_team(db, 1b, 2b, ss, 3b, lf, cf, rf, c, p)
-	db.execute("INSERT INTO team (position, name) VALUES (?, ?)", [position, name])
+def create_team(db, position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
+	db.execute("INSERT INTO team (position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, 
+    position_cf, cf, position_rf, rf, position_c, c, position_p, p) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+    [position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p])
 	end
 
 #============================================================================#
@@ -194,7 +205,7 @@ def create_team(db, 1b, 2b, ss, 3b, lf, cf, rf, c, p)
 
 
 
-def add_1B(db, id, 1B)
+def modify_1B(db, id, 1B)
 	db.execute("UPDATE players SET 1B=? WHERE id=?", [1B, id])
 
 
@@ -220,10 +231,55 @@ end
 
 #Print pitchers!!!!!
 
+puts "Create you fantasy baseball team!"
+puts ""
+puts ""
+def print_first_basemen (db)
+	puts "Here are the first basemen to choose from:"
+	first = db.execute("SELECT * FROM first_basemen")
+	first.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
 
-    print "Enter the name of 1B: "
-    1B = gets.chomp
-    add_player(1B)
+puts "Enter the number of chosen first baseman: "
+    1B = gets.chomp.to_i
+
+def print_second_basemen(db)
+	puts "Here are the second basemen to choose from:"
+	second = db.execute("SELECT * FROM second_basemen")
+	second.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
+
+puts "Enter the number of chosen second baseman: "
+    2B = gets.chomp.to_i
+
+def print_shortstops(db)
+	puts "Here are the shortstops to choose from:"
+	short = db.execute("SELECT * FROM shortstops")
+	short.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
+
+puts "Enter the number of chosen shortstop: "
+    SS = gets.chomp.to_i
+
+def print_shortstops(db)
+	puts "Here are the shortstops to choose from:"
+	short = db.execute("SELECT * FROM shortstops")
+	short.each do |player|
+		puts "#{player['id']}. #{player['name']}"
+	end
+end
+
+puts "Enter the number of chosen shortstop: "
+    SS = gets.chomp.to_i
+    
+
+    
     
     print "Enter the name of 2B: "
     2B = gets.chomp
@@ -249,5 +305,5 @@ end
     print "Enter the name of P (enter number from list): "
     pitcher_id = gets.chomp
 
-    create_lineup(position, name)
+    create_team(position, name)
 
