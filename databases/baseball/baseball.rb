@@ -201,27 +201,6 @@ def create_team(db, position_1b, first_b, position_2b, second_b, position_ss, ss
 
 #============================================================================#
 
-#method to create player lineup
-
-
-
-#def modify_1B(db, id, 1B)
-	#db.execute("UPDATE players SET 1B=? WHERE id=?", [1B, id])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 puts "Create you fantasy baseball team!"
@@ -265,7 +244,7 @@ end
 print_shortstops
 puts "Enter the number of chosen shortstop: "
     ss = gets.chomp.to_i
-    position_ss = SS
+    position_ss = "SS"
 
 def print_third_basemen(db)
 	puts "Here are the third basemen to choose from:"
@@ -278,7 +257,7 @@ end
 print_third_basemen
 puts "Enter the number of chosen third baseman: "
     third_b = gets.chomp.to_i
-    thrd = 3B
+    thrd = "3B"
     
 
 def print_left_fielders(db)
@@ -292,7 +271,7 @@ end
 print_left_fielders
 puts "Enter the number of chosen left fielder: "
     lf = gets.chomp.to_i
-    position_lf = LF
+    position_lf = "LF"
 
 def print_center_fielders(db)
 	puts "Here are the center fielders to choose from:"
@@ -305,7 +284,7 @@ end
 print_center_fielders
 puts "Enter the number of chosen center fielder: "
     cf = gets.chomp.to_i
-    position_cf = CF
+    position_cf = "CF"
 
 def print_right_fielders(db)
 	puts "Here are the right fielders to choose from:"
@@ -318,7 +297,7 @@ end
 print_right_fielders
 puts "Enter the number of chosen right fielder: "
     rf = gets.chomp.to_i
-    position_rf = RF
+    position_rf = "RF"
 
 def print_catchers(db)
 	puts "Here are the catchers to choose from:"
@@ -331,7 +310,7 @@ end
 print_catchers
 puts "Enter the number of chosen catchers: "
     c = gets.chomp.to_i
-    position_c = C
+    position_c = "C"
 
 def print_pitchers(db)
 	puts "Here are the pitchers to choose from:"
@@ -344,7 +323,7 @@ end
 print_pitchers
 puts "Enter the number of chosen pitcher: "
     p = gets.chomp.to_i
-    position_p = P
+    position_p = "P"
 
 
 create_team(db, position_1b, first_b, position_2b, second_b, position_ss, ss, thrd, third_b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
