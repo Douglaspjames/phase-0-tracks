@@ -193,10 +193,10 @@ end
   create_pitchers(db, Faker::Name.name)
 end
 
-def create_team(db, position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
-	db.execute("INSERT INTO team (position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, 
+def create_team(db, position_1b, first_b, position_2b, second_b, position_ss, ss, position_3b, third_b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
+	db.execute("INSERT INTO team (position_1b, first_b, position_2b, second_b, position_ss, ss, position_3b, third_b, position_lf, lf, 
     position_cf, cf, position_rf, rf, position_c, c, position_p, p) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
-    [position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p])
+    [position_1b, first_b, position_2b, second_b, position_ss, ss, position_3b, third_b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p])
 	end
 
 #============================================================================#
@@ -237,7 +237,7 @@ end
 
 print_first_basemen
 puts "Enter the number of chosen first baseman: "
-    1b = gets.chomp.to_i
+    first_b = gets.chomp.to_i
     position_1b = "1B"
 
 
@@ -251,7 +251,7 @@ end
 
 print_second_basemen
 puts "Enter the number of chosen second baseman: "
-    2b = gets.chomp.to_i
+    second_b = gets.chomp.to_i
     position_2b = "2B"
 
 def print_shortstops(db)
@@ -277,8 +277,8 @@ end
 
 print_third_basemen
 puts "Enter the number of chosen third baseman: "
-    3b = gets.chomp.to_i
-    position_3b = 3B
+    third_b = gets.chomp.to_i
+    thrd = 3B
     
 
 def print_left_fielders(db)
@@ -347,7 +347,7 @@ puts "Enter the number of chosen pitcher: "
     position_p = P
 
 
-create_team(db, position_1b, 1b, position_2b, 2b, position_ss, ss, position_3b, 3b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
+create_team(db, position_1b, first_b, position_2b, second_b, position_ss, ss, thrd, third_b, position_lf, lf, position_cf, cf, position_rf, rf, position_c, c, position_p, p)
 
 def print_team(db)
 	puts "Here is your team:"
