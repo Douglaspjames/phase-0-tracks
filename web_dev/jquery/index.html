@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>jQuery!!</title>
+
+	<link rel="stylesheet" href="style.css" type="text/css">
+
+	<script src ="jquery-1.12.3.js"></script>
+
+	<script type="text/javascript"> 
+	  $(document).ready(function() {
+	  	$("li.one").click(function(){
+          $("#page-wrap").animate({
+             width: "300px"
+          });
+	  	});
+	  	$("li.two").click(function(){
+          $("p").toggle();
+	  	});
+	  	$("li.three").click(function(){
+          $("p").toggle();
+	  	});
+	  });
+	</script>
+</head>
+<body>
+
+  <div id="page-wrap">
+
+    <div id="header">
+      <h1>jQuery!!!!!!</h1>
+      </div>
+
+      <ul id="buttons">
+       <li class="one"><a href="#">Hello world!</a></li>
+       <li class="two"><a href="#">Hello building and loan!</a></li>
+       <li class="three"><a href="#">Hello Bedford Falls!</a></li>
+
+       <p>WHAT UP??</p>
+
+
+</body>
+</html>

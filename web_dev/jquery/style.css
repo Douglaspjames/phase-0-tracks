@@ -1,0 +1,13 @@
+
+
+
+html {
+	background-color: gray;
+}
+
+div#page-wrap {
+	width: 500px; margin: 0 auto;
+}
+
+#header {
+	padding: 20px; background: red; }
