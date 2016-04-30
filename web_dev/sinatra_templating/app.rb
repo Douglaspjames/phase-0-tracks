@@ -25,3 +25,13 @@ post '/students' do
 end
 
 # add static resources
+get '/students/search' do
+  erb :Search
+end
+
+
+get '/students' do
+  db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  students.to_s
+  p students
+end
